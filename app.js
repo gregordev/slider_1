@@ -63,12 +63,13 @@ function carousel() {
   // Usunięcie klasy .active z każdej kropki na samym początku wywołania funkcji
   removeActiveClass();
 
-  if (id === 2) {
-    id = 0;
+  if (id < backgrounds.length-1) {
+    id++;
     slider.style.backgroundImage = `url(${backgrounds[id].url})`;
     dots[id].classList.add('active');
+   
   } else {
-    id++;
+    id = 0;
     slider.style.backgroundImage = `url(${backgrounds[id].url})`;
     dots[id].classList.add('active');
   }
